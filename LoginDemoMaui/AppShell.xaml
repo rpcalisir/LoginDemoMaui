@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="LoginDemoMaui.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:LoginDemoMaui"
+    xmlns:startupPages="clr-namespace:LoginDemoMaui.Views.Startup"
+    xmlns:dashboardPages="clr-namespace:LoginDemoMaui.Views.Dashboard"
+    xmlns:operationsPages="clr-namespace:LoginDemoMaui.Views.Operations"
+    >
+    <!--If Shell.FlyoutBehavior="Disabled" is added, then flyout button is not visible-->
+    <!--On 15. line, Shell.FlyoutBehavior="Disabled" makes is possible that after clicking Sign Out button, then flyout menu dont stuck showing, Login Page is showed directly and only.-->
+    <!-- Start page of the application -->
+    <ShellContent
+        Title="Login Page" FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate startupPages:LoginPage}"
+        Route="LoginPage" />
+
+    <!--On 14. line: FlyoutItemIsVisible="False" makes LoginPage not being visible on flyout, after clicking the login button and switching to DashboardPage-->
+
+    <!--On 21. line: Title="KINGS EVENT" makes it possible to DashboardPage being visible on flyout all the time, even before clicking the login button and switching to DashboardPage-->
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+        Title="Dashboard"
+        ContentTemplate="{DataTemplate dashboardPages:DashboardPage}"
+        Route="DashboardPage" />
+
+        <ShellContent
+        Title="Event Flyers"
+        ContentTemplate="{DataTemplate operationsPages:EventFlyersPage}"
+        Route="EventFlyersPage" />
+
+    </FlyoutItem>
+
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
+</Shell>
