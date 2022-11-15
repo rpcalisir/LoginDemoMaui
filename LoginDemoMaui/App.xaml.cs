@@ -29,8 +29,10 @@ public partial class App : Application
 #endif
 			}
 		});
-		#endregion
+        #endregion
 
+        //Sets the main page of the app, meaning starting page of the app
+        //This means the page in the ShellContent inside of AppShell.xaml will be the main page.
         MainPage = new AppShell();
 	}
 }
