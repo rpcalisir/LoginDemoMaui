@@ -11,6 +11,16 @@ using System.Threading.Tasks;
 
 namespace LoginDemoMaui.ViewModels.Startup
 {
+    #region Private Fields
+    #endregion
+
+    #region Properties
+    #endregion
+
+    #region Commands
+    #endregion
+
+    #region Public Methods
     public class LoadingViewModel
     {
         public LoadingViewModel()
@@ -46,4 +56,9 @@ namespace LoginDemoMaui.ViewModels.Startup
             }
         }
     }
+
+    #endregion
+
+    #region Private Implementation
+    #endregion
 }

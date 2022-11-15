@@ -1,7 +1,9 @@
 ﻿using LoginDemoMaui.ViewModels.Dashboard;
+using LoginDemoMaui.ViewModels.Operations;
 using LoginDemoMaui.ViewModels.Startup;
 using LoginDemoMaui.Views;
 using LoginDemoMaui.Views.Dashboard;
+using LoginDemoMaui.Views.Operations;
 using LoginDemoMaui.Views.Startup;
 using Microsoft.Extensions.Logging;
 
@@ -24,12 +26,15 @@ public static class MauiProgram
 		builder.Services.AddSingleton<LoginPage>();
 		builder.Services.AddSingleton<DashboardPage>();
 		builder.Services.AddSingleton<LoadingPage>();
+		builder.Services.AddSingleton<EventFlyersPage>();
 
 
         //ModelViews
         builder.Services.AddSingleton<LoginViewModel>();
         builder.Services.AddSingleton<DashboardViewModel>();
         builder.Services.AddSingleton<LoadingViewModel>();
+        builder.Services.AddSingleton<EventFlyersViewModel>();
+		
 
 
 #if DEBUG

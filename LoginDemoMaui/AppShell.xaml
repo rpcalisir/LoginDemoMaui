@@ -32,7 +32,7 @@
         Route="DashboardPage" />
 
         <ShellContent
-        Title="Event Flyers"
+        Title="EVENTS"
         ContentTemplate="{DataTemplate operationsPages:EventFlyersPage}"
         Route="EventFlyersPage" />
 
