@@ -13,6 +13,11 @@ namespace LoginDemoMaui.ViewModels
         [RelayCommand]
         async void SignOut()
         {
+            if (Preferences.ContainsKey(nameof(App.SignedInUserInfo)))
+            {
+                Preferences.Remove(nameof(App.SignedInUserInfo));
+            }
+
             await AppShell.Current.GoToAsync($"//{nameof(LoginPage)}");
         }
     }

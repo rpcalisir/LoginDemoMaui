@@ -8,6 +8,12 @@
     xmlns:dashboardPages="clr-namespace:LoginDemoMaui.Views.Dashboard"
     xmlns:operationsPages="clr-namespace:LoginDemoMaui.Views.Operations"
     >
+
+    <ShellContent FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate startupPages:LoadingPage}"
+        Route="LoadingPage"
+        />
+
     <!--If Shell.FlyoutBehavior="Disabled" is added, then flyout button is not visible-->
     <!--On 15. line, Shell.FlyoutBehavior="Disabled" makes is possible that after clicking Sign Out button, then flyout menu dont stuck showing, Login Page is showed directly and only.-->
     <!-- Start page of the application -->
