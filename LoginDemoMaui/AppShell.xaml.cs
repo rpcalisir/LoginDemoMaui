@@ -14,8 +14,14 @@ public partial class AppShell : Shell
         BindingContext = new AppShellViewModel();
 
 
-		//This is added to make it possible to navigate between pages from viewmodel classes.
-		//For example; DashboardPage is registered here, it's route is registered, so it is possible to go to this page with accessing to Shell.Current from any view model class.
-		Routing.RegisterRoute(nameof(DashboardPage), typeof(DashboardPage));
+        //This is added to make it possible to navigate between pages from viewmodel classes.
+        //For example; DashboardPage is registered here, it's route is registered, so it is possible to go to this page with accessing to Shell.Current from any view model class.
+        //If this routing is not added here, then following exception is thrown when a command is executed to navigato to DashboardPage:
+        //Relative routing to shell elements is currently not supported. Try prefixing your uri with ///: ///DashboardPage'
+        //So this is prefixing our uri with the page we want to navigate into.
+        Routing.RegisterRoute(nameof(DashboardPage), typeof(DashboardPage));
+
+
+
 	}
 }

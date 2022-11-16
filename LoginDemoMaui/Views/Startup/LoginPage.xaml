@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LoginDemoMaui.Views.Startup.LoginPage"
              xmlns:handlers="clr-namespace:LoginDemoMaui.Handlers"
+             Shell.NavBarIsVisible="False"
              Title="LoginPage"
-             Shell.NavBarIsVisible="False">
+             >
     <!--On 7. line: Shell.NavBarIsVisible="False" makes it possible that flyout button is not visible when app starts, so it prevents user to go to the Dashboard page before a successfull login.-->
     
     
